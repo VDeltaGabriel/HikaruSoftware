@@ -14,6 +14,9 @@ import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
+print(f'Pic Dir: {picdir}')
+print(f'Lib Dir: {libdir}')
+
 logging.basicConfig(level=logging.DEBUG)
 
 try:
