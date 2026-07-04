@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
-libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+picdir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pic')
+libdir = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 
 if os.path.exists(libdir):
     sys.path.append(libdir)
@@ -14,12 +14,11 @@ import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
-print(f'Pic Dir: {picdir}')
-print(f'Lib Dir: {libdir}')
-
 logging.basicConfig(level=logging.DEBUG)
 
 try:
+    logging.info(f'Pic Dir: {picdir}')
+    logging.info(f'Lib Dir: {libdir}')
     logging.info("epd2in13_V4 Demo")
     
     epd = epd2in13_V4.EPD()
